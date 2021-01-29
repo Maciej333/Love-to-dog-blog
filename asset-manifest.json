@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Love-to-dog-blog/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/Love-to-dog-blog/static/js/main.b5911476.chunk.js",
+    "main.js.map": "/Love-to-dog-blog/static/js/main.b5911476.chunk.js.map",
+    "runtime-main.js": "/Love-to-dog-blog/static/js/runtime-main.7267c11f.js",
+    "runtime-main.js.map": "/Love-to-dog-blog/static/js/runtime-main.7267c11f.js.map",
+    "static/js/2.65a2571a.chunk.js": "/Love-to-dog-blog/static/js/2.65a2571a.chunk.js",
+    "static/js/2.65a2571a.chunk.js.map": "/Love-to-dog-blog/static/js/2.65a2571a.chunk.js.map",
+    "index.html": "/Love-to-dog-blog/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/Love-to-dog-blog/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.65a2571a.chunk.js.LICENSE.txt": "/Love-to-dog-blog/static/js/2.65a2571a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7267c11f.js",
+    "static/js/2.65a2571a.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.b5911476.chunk.js"
+  ]
+}
