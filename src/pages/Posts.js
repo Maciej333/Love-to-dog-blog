@@ -3,7 +3,11 @@ import { NavLinks } from '../components/Navbar/NavLinks';
 import { Post } from '../components/Posts/Post';
 import { PostHeader } from '../components/Posts/PostsHeader';
 
+import useFetch from '../components/Hooks/UseFetch';
+
 export const Posts = () => {
+
+
     return (
         <div className="blog">
             <PostHeader />
