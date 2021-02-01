@@ -7,7 +7,7 @@ import useFetch from '../components/Hooks/UseFetch';
 
 export const Posts = () => {
 
-    const {datas: postArray} = useFetch("https://raw.githubusercontent.com/Maciej333/Love-to-dog-blog/master/src/components/Data/data_posts.json");
+    const { datas: postArray } = useFetch("https://raw.githubusercontent.com/Maciej333/Love-to-dog-blog/master/src/Data/data_posts.json");
 
     return (
         <div className="blog">
@@ -22,9 +22,13 @@ export const Posts = () => {
                     <h1>NAJNOWSZE WPISY</h1>
                     <hr />
                     {postArray &&
-                        postArray.map((item) => {
-                            return <Post key={item.id} data={item} />
-                        }) }
+                        postArray
+                            .sort((post1, post2) => {
+                                return new Date(post2.date) - new Date(post1.date);
+                            })
+                            .map((post) => {
+                                return <Post key={post.id} data={post} />
+                            })}
                 </section>
                 <section className="filters">
                     <h1>FILTRY</h1>
