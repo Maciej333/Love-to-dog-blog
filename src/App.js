@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import { Home } from './pages/Home';
 import { Posts } from './pages/Posts';
 
@@ -10,13 +8,12 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/Love-to-dog-blog/">
             <Home />
           </Route>
-          <Route path="/posts">
+          <Route path="/Love-to-dog-blog/posts">
             <Posts />
           </Route>
-
           <Route path="*">
 
           </Route>

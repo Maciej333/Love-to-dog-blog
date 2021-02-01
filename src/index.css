@@ -6,14 +6,14 @@ body {
 
 /* Navbar */
 .navbar {
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  margin-top: 20px;
+  padding-top: 20px;
   font-size: 1rem;
 }
 
@@ -90,5 +90,142 @@ a:hover {
     padding-right: 20px;
     width: auto;
     font-size: 2rem;
+  }
+}
+
+/* POSTS */
+.blog {
+  min-height: 100vh;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  color: #000;
+}
+
+header {
+  font-size: 3rem;
+  padding: 40px 0;
+}
+
+.blog a {
+  font-size: 1.5rem;
+}
+
+.welcome {
+  margin: 20px 0;
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(to right, rgba(30,205,217,0.3), rgba(255,255,255,0.7), rgba(255,255,255,0.4)),url("./images/welcome_pic.jpg");
+  background-position: bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.posts {
+  border-radius: 50px;
+  width: 90%;
+  max-width: 1000px;
+  height: 80%;
+  text-align: left;
+}
+
+.posts h1{
+  text-align: center;
+}
+
+.post {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin: 50px 0;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #666;
+}
+
+.post-new {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgb(118,9,121);
+  background: linear-gradient(16deg, rgba(118,9,121,1) 12%, rgba(0,212,255,1) 100%); 
+  top: -2.5%;
+  left: -2.5%;
+  border: 5px solid white;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.post-img {
+  background: url("./images/test.jpg");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 25px;
+  width: 40%;
+  min-height: 200px;
+}
+
+.post-text{
+  width: 60%;
+  margin: 0;
+  padding: 0 10px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-text a{
+  font-size: 1rem;
+}
+
+.post-text a h2, .post-text p{
+  margin: 0px;
+}
+
+.filters {
+  width: 96%;
+  height: 80%;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .welcome {
+    height: 400px;
+  }
+
+  .posts {
+    width: 60%;
+  }
+
+  .post-img {
+    width: 30%;
+  }
+
+  .post-text{
+    width: 70%;
+  }
+
+  .filters {
+    margin-left: 2%;
+    width:20%;
   }
 }
