@@ -52,9 +52,43 @@ a:hover {
   }
 }
 
+
+/* HOME */
 .home{
+  position: relative;
   background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url("./images/background.jpg"); 
   background-position: top center;
   background-size: cover;
   height: 100vh;
+}
+
+.jumbotron {
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  box-shadow: 9px 10px 0px -3px rgba(30,205,217,0.3);
+  -webkit-box-shadow: 9px 10px 0px -3px rgba(30,205,217,0.3);
+  -moz-box-shadow: 9px 10px 0px -3px rgba(30,205,217,0.3);
+}
+.jumbotron span{
+  color:rgb(30, 205, 217);
+}
+
+@media screen and (min-width: 500px) {
+  .jumbotron {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .jumbotron {
+    padding-right: 20px;
+    width: auto;
+    font-size: 2rem;
+  }
 }
