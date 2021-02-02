@@ -6,7 +6,9 @@ const useFetch = (url) => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch(url)
+        const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal })
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -18,7 +20,9 @@ const useFetch = (url) => {
             .catch(err => {
                 setError(true);
             });
+        return () => abortCont.abort();
     }, [url]);
+
     return { datas, error };
 }
 
