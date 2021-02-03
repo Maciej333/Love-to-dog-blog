@@ -17,6 +17,28 @@ export const Posts = (props) => {
     const [pageNr, setPage] = useState(1);
     const { datas: postArray, error } = useFetch("https://raw.githubusercontent.com/Maciej333/Love-to-dog-blog/master/src/Data/data_posts.json");
 
+    const TAGS_ARRAY = ["relation", "health", "young", "eat", "bauty", "event"]
+    const [searchTitle, setSearchTitle] = useState("")
+    const [searchTag, setSearchTag] = useState("");
+
+    const changeSearchTitle = (event) => {
+        const { value } = event.target;
+        setSearchTitle(value.trimStart().toLowerCase());
+        setPage(1);
+    }
+
+    const changeSearchTags = (event) => {
+        const { value } = event.target;
+        setSearchTag(prevState => {
+            if (prevState.includes(value)) {
+                return "";
+            } else {
+                return value;
+            }
+        });
+        setPage(1);
+    }
+
     const changePage = (nr) => {
         setPage(nr);
     }
@@ -28,6 +50,13 @@ export const Posts = (props) => {
                 <hr />
                 {postArray ?
                     postArray
+                        .filter(post => post.title.toLowerCase().includes(searchTitle))
+                        .filter(post => {
+                            if (searchTag) {
+                                return post.tags.includes(searchTag);
+                            }
+                            return true;
+                        })
                         .sort((post1, post2) => {
                             return new Date(post2.date) - new Date(post1.date);
                         })
@@ -41,11 +70,37 @@ export const Posts = (props) => {
                         :
                         <Spinner />
                 }
-                <Pagination active={pageNr} totalPages={postArray ? Math.ceil(postArray.length / POST_PER_PAGE) : 0} changePage={changePage} />
+                <Pagination
+                    active={pageNr}
+                    totalPages={postArray ?
+                        Math.ceil(postArray
+                            .filter(post => post.title.toLowerCase().includes(searchTitle))
+                            .filter(post => {
+                                if (searchTag) {
+                                    return post.tags.includes(searchTag);
+                                }
+                                return true;
+                            })
+                            .length / POST_PER_PAGE)
+                        :
+                        0}
+                    changePage={changePage}
+                />
             </section>
             <section className="filters">
                 <h1>FILTRY</h1>
                 <hr />
+                <input
+                    type="text"
+                    value={searchTitle}
+                    placeholder="Search title.."
+                    onChange={changeSearchTitle}
+                />
+                <div className="filters-tags">
+                    {
+                        TAGS_ARRAY.map(tag => <button key={tag} value={tag} onClick={changeSearchTags} style={{ backgroundColor: (searchTag.includes(tag)) ? "rgb(30, 205, 217)" : '#fff' }}>#{tag}</button>)
+                    }
+                </div>
             </section>
         </>;
     }
