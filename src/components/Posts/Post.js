@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PostImg } from './PostImg';
+import { PostInfo } from './PostInfo';
 
 export const Post = (props) => {
 
@@ -8,12 +10,9 @@ export const Post = (props) => {
     return (
         <article className="post">
             <div className="post-new" style={{ display: props.data.new === "true" ? "flex" : "none" }}>NEW</div>
-            <div className="post-img" style={{ background: `url(${img}) no-repeat center center / cover` }}></div>
+            <PostImg imgSrc={img} />
             <div className="post-text">
-                <div className="post-info">
-                    <span className="post-tags">{tags.map((tag) => `#${tag} `)}</span>
-                    <span className="post-date">{date}</span>
-                </div>
+                <PostInfo tags={tags} date={date} />
                 <Link to={`/Love-to-dog-blog/posts/${id}`} style={{ color: "#000" }}>
                     <h2>{title}</h2>
                 </Link>
