@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Post = (props) => {
 
-    const { img, tags, date, title, desc } = props.data;
+    const { id, img, tags, date, title, desc } = props.data;
 
     return (
         <article className="post">
@@ -14,7 +14,7 @@ export const Post = (props) => {
                     <span className="post-tags">{tags.map((tag) => `#${tag} `)}</span>
                     <span className="post-date">{date}</span>
                 </div>
-                <Link to="" style={{ color: "#000" }}>
+                <Link to={`/Love-to-dog-blog/posts/${id}`} style={{ color: "#000" }}>
                     <h2>{title}</h2>
                 </Link>
                 <p>{desc}</p>

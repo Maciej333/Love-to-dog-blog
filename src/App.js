@@ -11,7 +11,7 @@ function App() {
           <Route exact path="/Love-to-dog-blog/">
             <Home />
           </Route>
-          <Route path="/Love-to-dog-blog/posts">
+          <Route path="/Love-to-dog-blog/posts/:id?">
             <Posts />
           </Route>
           <Route path="*">
