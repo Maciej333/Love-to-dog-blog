@@ -105,7 +105,7 @@ export const Posts = (props) => {
         </>;
     }
 
-    const singlePost = () => {
+    const singleBlogPost = () => {
         return <>
             {
                 postArray && <PostPage data={postArray.filter(post => (post.id === urlPostId))} />
@@ -125,7 +125,7 @@ export const Posts = (props) => {
                 {!urlPostId ?
                     allBlogPost()
                     :
-                    singlePost()
+                    singleBlogPost()
                 }
             </main>
         </div>

@@ -352,3 +352,68 @@ header {
   }
 }
 
+/* Gallery */
+.gallery {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.gallery h1 {
+  font-size: 3rem;
+}
+
+.gallery .links {
+ font-size: 1.5rem;
+ padding-bottom: 50px;
+}
+
+.gallery-images {
+  margin: 0 auto;
+  padding-bottom: 25px;
+  width: 92%;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 25px;
+}
+
+.card {
+  justify-self: stretch;
+  position: relative;
+  height: 300px;
+  background-color: #ccc;
+  border-radius: 5%;
+  box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.75);
+}
+
+.card div{
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 4%;
+  bottom: 15%;
+  width: 90%;
+  height: 81%;
+  border-radius: 5%;
+}
+
+.gallery .spinner-container {
+  position: absolute;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery-images {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
