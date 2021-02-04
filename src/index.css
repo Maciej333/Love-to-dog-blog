@@ -401,7 +401,7 @@ header {
 }
 
 .gallery .spinner-container {
-  position: absolute;
+  position: relative;
   margin: 0 auto;
 }
 
@@ -416,4 +416,25 @@ header {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
   }
+}
+
+/* page-not-found */
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #B80f0A;
+  font-size: 1.5rem;
+}
+
+.page-not-found p:first-child {
+  font-size: 2.25rem;
+}
+
+.page-not-found button {
+  box-shadow: none;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
 }

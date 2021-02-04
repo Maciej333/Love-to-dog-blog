@@ -6,7 +6,7 @@ export const Home = () => {
         <div className="home">
             <Navbar color="#fff" />
             <div className="jumbotron">
-                <h1>My goal is to share with You<br /> my passion to <span>Dog!</span></h1>
+                <h1>My goal is to share with You<br /> my passion to <span>Dogs!</span></h1>
             </div>
         </div>
     )
