@@ -1,22 +1,29 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
+
     const [datas, setDatas] = useState(null);
+    const [error, setError] = useState(false);
+
     useEffect(() => {
-        fetch(url)
+        const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal })
             .then(response => {
                 if (response.ok) {
                     return response.json();
                 } else {
-                    new Error("bad response");
+                    throw new Error("bad response");
                 }
             })
             .then(item => setDatas(item))
             .catch(err => {
-                console.error("ERROR fetching data");
+                setError(true);
             });
+        return () => abortCont.abort();
     }, [url]);
-    return { datas };
+
+    return { datas, error };
 }
 
 export default useFetch;
