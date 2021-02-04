@@ -9,7 +9,7 @@ export const Gallery = () => {
 
     let i = 0;
     const [pageNumber, setPageNumber] = useState(1);
-    let { datas: galleryArray, error } = useFetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=6`);
+    let { datas: galleryArray, error } = useFetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=12`);
     const [galleryPictures, setGaleryPictures] = useState([]);
 
     useEffect(() => {
