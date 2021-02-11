@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/Love-to-dog-blog/static/css/main.5e6e9ba8.chunk.css",
-    "main.js": "/Love-to-dog-blog/static/js/main.9193dda6.chunk.js",
-    "main.js.map": "/Love-to-dog-blog/static/js/main.9193dda6.chunk.js.map",
+    "main.js": "/Love-to-dog-blog/static/js/main.884215d4.chunk.js",
+    "main.js.map": "/Love-to-dog-blog/static/js/main.884215d4.chunk.js.map",
     "runtime-main.js": "/Love-to-dog-blog/static/js/runtime-main.7267c11f.js",
     "runtime-main.js.map": "/Love-to-dog-blog/static/js/runtime-main.7267c11f.js.map",
-    "static/js/2.eb6120eb.chunk.js": "/Love-to-dog-blog/static/js/2.eb6120eb.chunk.js",
-    "static/js/2.eb6120eb.chunk.js.map": "/Love-to-dog-blog/static/js/2.eb6120eb.chunk.js.map",
+    "static/js/2.2ac84118.chunk.js": "/Love-to-dog-blog/static/js/2.2ac84118.chunk.js",
+    "static/js/2.2ac84118.chunk.js.map": "/Love-to-dog-blog/static/js/2.2ac84118.chunk.js.map",
     "index.html": "/Love-to-dog-blog/index.html",
-    "static/css/main.5e6e9ba8.chunk.css.map": "/Love-to-dog-blog/static/css/main.5e6e9ba8.chunk.css.map",
-    "static/js/2.eb6120eb.chunk.js.LICENSE.txt": "/Love-to-dog-blog/static/js/2.eb6120eb.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/Love-to-dog-blog/static/media/welcome_pic.3497b44b.jpg",
-    "static/media/logo.102d6e89.png": "/Love-to-dog-blog/static/media/logo.102d6e89.png"
+    "static/js/2.2ac84118.chunk.js.LICENSE.txt": "/Love-to-dog-blog/static/js/2.2ac84118.chunk.js.LICENSE.txt",
+    "static/media/background.48aa72a6.jpg": "/Love-to-dog-blog/static/media/background.48aa72a6.jpg",
+    "static/media/logo.102d6e89.png": "/Love-to-dog-blog/static/media/logo.102d6e89.png",
+    "static/media/welcome_pic.3497b44b.jpg": "/Love-to-dog-blog/static/media/welcome_pic.3497b44b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.7267c11f.js",
-    "static/js/2.eb6120eb.chunk.js",
-    "static/css/main.5e6e9ba8.chunk.css",
-    "static/js/main.9193dda6.chunk.js"
+    "static/js/2.2ac84118.chunk.js",
+    "static/js/main.884215d4.chunk.js"
   ]
 }
