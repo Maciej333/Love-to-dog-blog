@@ -7,7 +7,9 @@ import { FetchError } from '../components/response/FetchError';
 import { PostPage } from '../components/Posts/PostPage';
 import { Pagination } from '../components/Posts/Pagination';
 import { useParams } from 'react-router-dom';
+import welcomeImg from '../images/welcome_pic.jpg'
 import useFetch from '../components/Hooks/UseFetch';
+import styled from 'styled-components';
 
 export const Posts = (props) => {
 
@@ -45,7 +47,7 @@ export const Posts = (props) => {
 
     const allBlogPost = () => {
         return <>
-            <section className="posts">
+            <StyledPosts>
                 <h1>NAJNOWSZE WPISY</h1>
                 <hr />
                 {postArray ?
@@ -86,8 +88,8 @@ export const Posts = (props) => {
                         0}
                     changePage={changePage}
                 />
-            </section>
-            <section className="filters">
+            </StyledPosts>
+            <StyledFilters>
                 <h1>FILTRY</h1>
                 <hr />
                 <input
@@ -96,12 +98,12 @@ export const Posts = (props) => {
                     placeholder="Search title.."
                     onChange={changeSearchTitle}
                 />
-                <div className="filters-tags">
+                <StyledFiltersTags>
                     {
-                        TAGS_ARRAY.map(tag => <button key={tag} value={tag} onClick={changeSearchTags} style={{ backgroundColor: (searchTag.includes(tag)) ? "rgb(30, 205, 217)" : '#fff' }}>#{tag}</button>)
+                        TAGS_ARRAY.map(tag => <StyledFilterButton key={tag} value={tag} onClick={changeSearchTags} style={{ backgroundColor: (searchTag.includes(tag)) ? "rgb(30, 205, 217)" : '#fff' }}>#{tag}</StyledFilterButton>)
                     }
-                </div>
-            </section>
+                </StyledFiltersTags>
+            </StyledFilters>
         </>;
     }
 
@@ -114,20 +116,122 @@ export const Posts = (props) => {
     }
 
     return (
-        <div className="blog">
-            <PostHeader />
+        <StyledBlog>
+            <PostHeader>
+                POZNAJ LEPIEJ SWOJEGO PSA!
+            </PostHeader>
             <hr />
-            <NavLinks color="#000" />
+            <NavLinks color="#000" isCenter={true} isPadding={false} />
             {
-                !urlPostId && <div className="welcome"></div>
+                !urlPostId && <Welcome />
             }
-            <main className="container">
+            <MainContainer>
                 {!urlPostId ?
                     allBlogPost()
                     :
                     singleBlogPost()
                 }
-            </main>
-        </div>
+            </MainContainer>
+        </StyledBlog>
     )
 }
+
+const StyledPosts = styled.section`
+    border-radius: 50px;
+    width: 90%;
+    max-width: 1000px;
+    height: 80%;
+    text-align: left;
+
+    & h1 {
+        text-align: center;
+    }
+
+    @media screen and (min-width: 600px) {
+        & {
+            width: 60%;
+        }
+    }
+`;
+
+const StyledFilters = styled.section`
+    width: 96%;
+    height: 80%;
+    max-width: 600px;
+    text-align: left;
+
+    @media screen and (min-width: 600px) {
+        & {
+            margin-left: 2%;
+            width:20%;
+        }
+    }
+`;
+
+const StyledFiltersTags = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 600px) {
+        & {
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 80px;
+        }
+    }
+`;
+
+const StyledFilterButton = styled.button`
+    margin: 20px 0;
+    padding: 5px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+`;
+
+const StyledBlog = styled.div`
+    min-height: 100vh;
+    position: relative;
+    height: 100%;
+    text-align: center;
+    color: #000;
+`;
+
+const Welcome = styled.div`
+    margin: 20px 0;
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(to right, rgba(30,205,217,0.3), rgba(255,255,255,0.7), rgba(255,255,255,0.4)),url(${welcomeImg});
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media screen and (min-width: 600px) {
+        & {
+            height: 400px;
+        }
+    }
+`;
+
+const MainContainer = styled.main`
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media screen and (min-width: 600px) {
+        & {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+`;

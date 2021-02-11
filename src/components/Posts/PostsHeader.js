@@ -1,9 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const PostHeader = () => {
-    return (
-        <header className="posts-header">
-            POZNAJ LEPIEJ SWOJEGO PSA!
-        </header>
-    )
-}
+export const PostHeader = styled.header`
+    font-size: 3rem;
+    padding: 40px 0;
+`;
