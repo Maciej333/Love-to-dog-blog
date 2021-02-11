@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components';
 
 
 export const NotFound = () => {
@@ -11,10 +12,30 @@ export const NotFound = () => {
     }
 
     return (
-        <div className="page-not-found">
+        <PageNotFound>
             <p>Ups 404, page not found</p>
             <p>You can come back to previous page by the button down bellow</p>
             <button onClick={handleClick}>BACK</button>
-        </div>
+        </PageNotFound>
     )
 }
+
+const PageNotFound = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #B80f0A;
+    font-size: 1.5rem;
+
+    p:first-child {
+        font-size: 2.25rem;
+    }
+
+    button {
+        box-shadow: none;
+        background: transparent;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+`;

@@ -1,13 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export const PostInfo = (props) => {
 
-    const {tags, date} = props;
+    const { tags, date } = props;
 
     return (
-        <div className="post-info">
-            <span className="post-tags">{tags.map((tag) => `#${tag} `)}</span>
-            <span className="post-date">{date}</span>
-        </div>
+        <StyledPostInfo>
+            <span>{tags.map((tag) => `#${tag} `)}</span>
+            <span>{date}</span>
+        </StyledPostInfo>
     )
 }
+
+const StyledPostInfo = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
